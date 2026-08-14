@@ -26,7 +26,16 @@ def route_after_grade_generation(state: AgentState) -> str:
     return "generate"
 
 
+def route_after_grade_answer(state: AgentState) -> str:
+    result = state.get("grade_answer_result") or {}
+    addresses = result.get("addresses_question", "no").lower() == "yes"
+    cycles = state.get("retrieve_cycles", 0)
 
+    if addresses:
+        return "finish"
+    if cycles >= MAX_RETRIEVE_CYCLES:
+        return "finish"
+    return "retrieve"
 
 
 def build_graph():
