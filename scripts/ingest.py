@@ -18,7 +18,7 @@ def main():
     parser = argparse.ArgumentParser(description="Ingest academic PDFs into ChromaDB")
     parser.add_argument(
         "--pdf-dir",
-        type=Path,
+        type=Path, 
         default=None,
         help="Directory containing PDFs (default: /home/shanujya/llm_paper)",
     )

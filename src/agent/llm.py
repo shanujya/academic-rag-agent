@@ -10,7 +10,7 @@ from google.genai import types
 
 from config import FLASH_MODEL, PRO_MODEL
 
-_MAX_RETRIES = 4
+_MAX_RETRIES = 10
 
 
 def get_client() -> genai.Client:
@@ -27,7 +27,18 @@ def _parse_json_response(text: str) -> dict:
     fence = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL)
     if fence:
         text = fence.group(1)
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        try:
+            return json.loads(text, strict=False)
+        except json.JSONDecodeError:
+            cleaned = re.sub(r'\\([^"\\/bfnrtu])', r'\\\\\1', text)
+            try:
+                return json.loads(cleaned, strict=False)
+            except json.JSONDecodeError:
+                return {}
+
 
 
 def _retry_delay_from_error(exc: Exception) -> float:
@@ -37,14 +48,21 @@ def _retry_delay_from_error(exc: Exception) -> float:
 
 
 def _call_with_retry(fn, *args, **kwargs):
-    """Call fn(*args, **kwargs), retrying up to _MAX_RETRIES times on 429."""
+    """Call fn(*args, **kwargs), retrying up to _MAX_RETRIES times on 429 or 503/server errors."""
     for attempt in range(_MAX_RETRIES):
         try:
             return fn(*args, **kwargs)
         except Exception as exc:
-            if "429" in str(exc) or "RESOURCE_EXHAUSTED" in str(exc):
-                wait = _retry_delay_from_error(exc)
-                print(f"[llm] Rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{_MAX_RETRIES})")
+            err_str = str(exc)
+            transient_signals = ["429", "RESOURCE_EXHAUSTED", "503", "UNAVAILABLE", "500", "502", "504"]
+            if any(signal in err_str for signal in transient_signals):
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                    wait = _retry_delay_from_error(exc)
+                else:
+                    wait = 5.0 * (attempt + 1)
+                print(
+                    f"[llm] API transient issue ({err_str[:60]}...) — waiting {wait:.0f}s (attempt {attempt + 1}/{_MAX_RETRIES})"
+                )
                 time.sleep(wait)
             else:
                 raise

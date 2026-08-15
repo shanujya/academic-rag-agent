@@ -226,9 +226,41 @@ python-dotenv>=1.0.0
 
 ---
 
+## 📊 Evaluation & Benchmarking
+
+The system includes an automated evaluation engine to quantitatively compare **Self-RAG** against a baseline **Naive RAG** implementation (`query -> retrieve(top_k) -> generate`).
+
+### Evaluation Methodology
+- **Test Dataset**: 21 curated test cases across 3 categories:
+  - `in_domain` (7 questions): Directly answered by PDF library papers.
+  - `adversarial` (7 questions): Topics outside the paper library testing web search fallback trigger accuracy.
+  - `complex` (7 questions): Multi-paper synthesis and architectural comparisons.
+- **LLM-as-a-Judge**: Evaluates Faithfulness (groundedness in context) and Answer Relevancy using `gemini-flash-lite-latest` at `temperature=0.0`.
+- **Metrics Tracked**:
+  - **Faithfulness / Groundedness Rate (%)**: Claims supported by context.
+  - **Answer Relevancy Rate (%)**: Direct answering of prompt intent.
+  - **Fallback Trigger Accuracy (%)**: Correct web fallback decisions.
+  - **Hallucination Interception Rate (%)**: Draft hallucinations caught and fixed by generation retry loops.
+  - **Execution Overhead**: Average latency (seconds) and LLM API calls per query.
+
+> ⚠️ **Disclaimer**: Judge uses the same model family as the generator; treat results as relative comparison between naive and Self-RAG, not absolute quality scores.
+
+### Running the Evaluation CLI
+
+To run the evaluation pipeline and compare against Naive RAG:
+
+```bash
+python scripts/run_eval.py --compare-naive --save-results
+```
+
+Results are saved to [`data/eval_results.json`](data/eval_results.json) and [`data/eval_results.md`](data/eval_results.md).
+
+---
+
 ## 🤝 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
 ---
+
 
