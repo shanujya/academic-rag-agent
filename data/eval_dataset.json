@@ -1,0 +1,212 @@
+[
+  {
+    "id": "q001",
+    "category": "in_domain",
+    "question": "What formula is used for scaled dot-product attention in the Transformer paper, and why is scaling by sqrt(d_k) necessary?",
+    "ground_truth_answer": "Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V. Scaling by sqrt(d_k) prevents the dot products from growing large in magnitude for large values of d_k, which would push the softmax function into regions with extremely small gradients.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["01_attention_is_all_you_need.pdf"],
+    "notes": "Core mathematical formulation of Transformer attention from Attention Is All You Need."
+  },
+  {
+    "id": "q002",
+    "category": "in_domain",
+    "question": "How does BERT pre-training differ from traditional left-to-right language models, and what are its two pre-training objectives?",
+    "ground_truth_answer": "BERT uses a bidirectional Transformer encoder instead of unidirectional left-to-right training. Its two pre-training objectives are Masked Language Modeling (MLM), where random tokens are masked and predicted, and Next Sentence Prediction (NSP), predicting whether sentence B follows sentence A.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["02_bert_pre-training_of_deep_bidirectional_transformers.pdf"],
+    "notes": "Evaluates BERT architecture and pre-training task definitions."
+  },
+  {
+    "id": "q003",
+    "category": "in_domain",
+    "question": "How does Low-Rank Adaptation (LoRA) parameterize weight updates during fine-tuning, and how does it reduce memory overhead?",
+    "ground_truth_answer": "LoRA freezes the pre-trained weight matrix W_0 and injects trainable rank decomposition matrices: W = W_0 + Delta W = W_0 + B * A, where B is in R^(d x r) and A is in R^(r x k) with rank r << min(d, k). This drastically reduces trainable parameters and GPU VRAM required for optimizer states.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["04_lora_low-rank_adaptation_of_large_language_models.pdf"],
+    "notes": "Tests understanding of LoRA rank decomposition mechanism."
+  },
+  {
+    "id": "q004",
+    "category": "in_domain",
+    "question": "What GPU memory hierarchy bottleneck does FlashAttention address, and how does it reduce memory access overhead?",
+    "ground_truth_answer": "FlashAttention addresses the High Bandwidth Memory (HBM) IO bottleneck. It uses tiling to load blocks of Q, K, V from HBM into fast GPU SRAM, computes attention incrementally without storing intermediate N x N attention matrices in HBM, and uses recomputation during the backward pass.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["05_flashattention_fast_and_memory-efficient_exact_attention.pdf"],
+    "notes": "Tests hardware-aware IO attention optimization concepts."
+  },
+  {
+    "id": "q005",
+    "category": "in_domain",
+    "question": "What are the key reflection tokens used in Self-RAG, and what does each evaluate?",
+    "ground_truth_answer": "Self-RAG defines reflection tokens including: Retrieve (decides whether to retrieve external documents), ISREL (evaluates whether retrieved chunk is relevant to prompt), ISSUP (evaluates whether generated response is grounded in retrieved context), and ISUSE (evaluates overall utility/quality of response).",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["10_self-rag_learning_to_retrieve_generate_and_self-reflect.pdf"],
+    "notes": "Directly targets the foundational paper behind this agent's architecture."
+  },
+  {
+    "id": "q006",
+    "category": "in_domain",
+    "question": "How does Mamba differ from standard State Space Models (SSMs) to achieve selective sequence modeling?",
+    "ground_truth_answer": "Traditional SSMs use time-invariant parameters, preventing them from filtering out irrelevant context based on the input. Mamba introduces selective SSMs where parameters (B, C, Delta) are input-dependent functions, allowing dynamic sequence selection while using a hardware-aware parallel algorithm.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["11_mamba_linear-time_sequence_modeling.pdf"],
+    "notes": "Tests selective state space parameter dynamics."
+  },
+  {
+    "id": "q007",
+    "category": "in_domain",
+    "question": "How many total and active parameters per token does Mixtral 8x7B have, and how does its routing mechanism work?",
+    "ground_truth_answer": "Mixtral 8x7B has 47B total parameters but activates only 13B active parameters per token. It uses a router network to select 2 out of 8 expert feed-forward networks for each token at every layer.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": ["12_mixtral_of_experts.pdf"],
+    "notes": "Tests parameter allocation and top-2 MoE routing mechanism."
+  },
+  {
+    "id": "q008",
+    "category": "adversarial",
+    "question": "What are the key architectural improvements introduced in DeepSeek-V3 and DeepSeek-R1?",
+    "ground_truth_answer": "DeepSeek-V3 utilizes Multi-head Latent Attention (MLA) and DeepSeekMoE architecture, while DeepSeek-R1 incorporates large-scale reinforcement learning for step-by-step reasoning chain synthesis.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query (DeepSeek model family released after library compilation)."
+  },
+  {
+    "id": "q009",
+    "category": "adversarial",
+    "question": "How does LLaMA 3's tokenizer vocabulary size compare to LLaMA 2?",
+    "ground_truth_answer": "LLaMA 3 expanded its tiktoken-based vocabulary to 128,000 tokens compared to LLaMA 2's 32,000 token vocabulary.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query regarding Meta LLaMA 3 specs."
+  },
+  {
+    "id": "q010",
+    "category": "adversarial",
+    "question": "What is the primary contribution of the RWKV architecture in linear attention language modeling?",
+    "ground_truth_answer": "RWKV combines the efficient parallel training of Transformers with the O(1) inference time and linear sequence complexity of RNNs using a time-decaying attention formulation.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query regarding RWKV linear model."
+  },
+  {
+    "id": "q011",
+    "category": "adversarial",
+    "question": "What is the function of the AlphaFold 3 model in predicting biomolecular complex interactions?",
+    "ground_truth_answer": "AlphaFold 3 predicts 3D structures and interactions across proteins, DNA, RNA, ligands, ions, and chemical modifications using a unified diffusion-based architecture.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query on structural biology AI."
+  },
+  {
+    "id": "q012",
+    "category": "adversarial",
+    "question": "What is the maximum context window size supported by Claude 3.5 Sonnet?",
+    "ground_truth_answer": "Claude 3.5 Sonnet supports a 200,000 token context window.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query on commercial LLM specifications."
+  },
+  {
+    "id": "q013",
+    "category": "adversarial",
+    "question": "How does Qwen-2.5-Coder incorporate fill-in-the-middle (FIM) training objectives?",
+    "ground_truth_answer": "Qwen-2.5-Coder uses prefix-suffix-middle data formatting during pre-training to support code completion and inline editing.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query on specialized code LLM training."
+  },
+  {
+    "id": "q014",
+    "category": "adversarial",
+    "question": "What is Apple's Ferret-UI architecture used for in mobile user interface understanding?",
+    "ground_truth_answer": "Ferret-UI is a multimodal MLLM tailored for mobile UI screens, enabling fine-grained perception, icon referencing, widget grounding, and action execution.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query on vision-language UI agents."
+  },
+  {
+    "id": "q015",
+    "category": "complex",
+    "question": "Compare how FlashAttention and Speculative Decoding reduce Transformer inference bottleneck: what specific physical resources (memory bandwidth vs compute) does each target?",
+    "ground_truth_answer": "FlashAttention targets HBM memory access bandwidth by tiling attention calculations into SRAM to reduce memory read/write ops during both training and inference. Speculative Decoding targets memory latency during autoregressive token generation by using a small draft model to generate multiple draft tokens, which the larger target model verifies in a single parallel forward pass.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "05_flashattention_fast_and_memory-efficient_exact_attention.pdf",
+      "06_fast_inference_from_transformers_via_speculative_decoding.pdf"
+    ],
+    "notes": "Multi-paper comparison between hardware IO optimization and speculative execution."
+  },
+  {
+    "id": "q016",
+    "category": "complex",
+    "question": "How could Low-Rank Adaptation (LoRA) be applied to a Mixture-of-Experts model like Mixtral 8x7B, and which parameters would be frozen versus adapted?",
+    "ground_truth_answer": "In Mixtral 8x7B, the base 47B backbone weights (attention projections and expert FFN matrices) remain frozen. LoRA low-rank decomposition matrices (A and B) can be attached either to the multi-head self-attention projection weights or to the 8 individual expert FFN layers (or router weights) to fine-tune the model with minimal parameter updates.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "04_lora_low-rank_adaptation_of_large_language_models.pdf",
+      "12_mixtral_of_experts.pdf"
+    ],
+    "notes": "Multi-paper synthesis combining PEFT (LoRA) and MoE (Mixtral) architectures."
+  },
+  {
+    "id": "q017",
+    "category": "complex",
+    "question": "Contrast the alignment and quality feedback mechanisms of Self-RAG during inference with Direct Preference Optimization (DPO) during training.",
+    "ground_truth_answer": "DPO works during offline training by directly optimizing a classification loss on preference pairs without requiring an explicit reward model. Self-RAG works during online inference (and fine-tuning) by generating special self-reflection tokens (ISREL, ISSUP, ISUSE) to dynamically control retrieval, detect hallucinations, and select optimal response candidates.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "07_direct_preference_optimization_dpo.pdf",
+      "10_self-rag_learning_to_retrieve_generate_and_self-reflect.pdf"
+    ],
+    "notes": "Multi-paper synthesis comparing offline preference optimization (DPO) vs runtime reflection (Self-RAG)."
+  },
+  {
+    "id": "q018",
+    "category": "complex",
+    "question": "How does Mamba achieve linear time complexity O(N) relative to sequence length compared to the quadratic O(N^2) complexity of standard Transformer attention in 'Attention Is All You Need'?",
+    "ground_truth_answer": "Standard Transformer attention computes pairwise dot products across all N tokens resulting in an N x N matrix (O(N^2) complexity). Mamba uses a selective state-space model formulation where hidden states are updated recurrently via input-dependent selective matrices, scaling linearly O(N) in compute and memory with sequence length.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "01_attention_is_all_you_need.pdf",
+      "11_mamba_linear-time_sequence_modeling.pdf"
+    ],
+    "notes": "Multi-paper comparative complexity analysis."
+  },
+  {
+    "id": "q019",
+    "category": "complex",
+    "question": "How does Representation Engineering (RepE) monitor internal neural representations differently than BERT's bidirectional representations?",
+    "ground_truth_answer": "BERT uses bidirectional representations as a pre-training objective to generate contextual token embeddings for downstream tasks. RepE treats internal activations as a top-down control mechanism, constructing reading vectors (to detect concepts/honesty) and control vectors (to modify hidden state directions during generation).",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "02_bert_pre-training_of_deep_bidirectional_transformers.pdf",
+      "08_representation_engineering_a_top-down_approach_to_ai_transparency.pdf"
+    ],
+    "notes": "Multi-paper conceptual comparison between static representations and RepE steering."
+  },
+  {
+    "id": "q020",
+    "category": "complex",
+    "question": "How does constrained decoding (like Synchromesh/schema constraints) complement few-shot prompting in LLMs like GPT-3 when generating structured JSON/SQL code?",
+    "ground_truth_answer": "GPT-3 few-shot prompting guides the model's semantic intent and formatting via example demonstrations, but can still produce invalid syntax or hallucinated schema identifiers. Synchromesh/schema-constrained decoding enforces strict formal grammar masks over the vocabulary during token generation, guaranteeing 100% syntactically valid JSON or SQL outputs matching target schemas.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "03_language_models_are_few-shot_learners_gpt-3.pdf",
+      "09_efficient_generation_of_structured_data_with_schema_constraints.pdf"
+    ],
+    "notes": "Multi-paper synthesis of prompt engineering vs decoding constraint masks."
+  },
+  {
+    "id": "q021",
+    "category": "complex",
+    "question": "How did Bahdanou's additive attention mechanism evolve into Vaswani's scaled dot-product attention mechanism?",
+    "ground_truth_answer": "Bahdanou attention used a feed-forward network with non-linear activation (v_a^T tanh(W_a s_{i-1} + U_a h_j)) to calculate alignment scores between decoder hidden states and encoder outputs sequentially. Vaswani's scaled dot-product attention replaced additive neural network scoring with matrix multiplication (Q K^T / sqrt(d_k)), enabling fully parallel computation across all sequence tokens on GPUs.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "01_attention_is_all_you_need.pdf",
+      "Bahdanou_attention_mechanism.pdf"
+    ],
+    "notes": "Historical architecture evolution from additive seq2seq attention to dot-product Transformer attention."
+  }
+]
