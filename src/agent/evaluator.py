@@ -150,13 +150,52 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
     }
 
 
+def sample_dataset(dataset: list[dict], n: int) -> list[dict]:
+    """Stratified sample of n items across categories (in_domain, adversarial, complex).
+
+    Distributes n items proportionally across categories, ensuring each category
+    is represented. Items within each category are picked from the front of the list
+    (deterministic — no random seed required for reproducibility).
+    """
+    from collections import defaultdict
+
+    if n <= 0 or n >= len(dataset):
+        return dataset
+
+    by_cat: dict[str, list[dict]] = defaultdict(list)
+    for item in dataset:
+        by_cat[item.get("category", "unknown")].append(item)
+
+    cats = list(by_cat.keys())
+    per_cat = max(1, n // len(cats))
+    sampled: list[dict] = []
+    for cat in cats:
+        sampled.extend(by_cat[cat][:per_cat])
+
+    # Top up to exactly n if rounding left us short
+    remaining = [item for item in dataset if item not in sampled]
+    sampled.extend(remaining[: n - len(sampled)])
+
+    return sampled[:n]
+
+
 def evaluate_dataset(
     dataset: list[dict],
     pipeline_fn: Callable[[str], dict],
     is_self_rag: bool = True,
     progress_callback: Callable[[int, int], None] | None = None,
+    inter_item_sleep: float = 4.0,
 ) -> dict:
-    """Orchestrate dataset evaluation across all items for a given pipeline."""
+    """Orchestrate dataset evaluation across all items for a given pipeline.
+
+    Args:
+        dataset: List of evaluation items.
+        pipeline_fn: Callable that accepts a question string and returns a result dict.
+        is_self_rag: Whether the pipeline is Self-RAG (vs. Naive RAG).
+        progress_callback: Optional callback(current, total) for progress tracking.
+        inter_item_sleep: Seconds to sleep between items to respect free-tier rate limits.
+            With batched grading (1 call per question), 4s is sufficient on gemini-flash-lite.
+    """
     results = []
     total = len(dataset)
 
@@ -192,8 +231,12 @@ def evaluate_dataset(
         if progress_callback:
             progress_callback(i, total)
 
-        time.sleep(2.0)
-
+        # Pace requests to stay within free-tier RPM limits.
+        # With batched grading the total LLM calls per item are now:
+        #   1 (batch grade) + 1 (generate) + 1 (grade_generation) + 1 (grade_answer) = 4 max
+        # Plus 2 judge calls (faithfulness + relevancy) = 6 total max per item.
+        if i < total:
+            time.sleep(inter_item_sleep)
 
     avg_latency = round(total_latency / total, 2) if total > 0 else 0.0
     avg_llm_calls = round(total_llm_calls / total, 2) if total > 0 else 0.0

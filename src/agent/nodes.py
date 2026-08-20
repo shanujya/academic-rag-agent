@@ -49,41 +49,71 @@ def retrieve(state: AgentState) -> dict:
 
 
 def grade_documents(state: AgentState) -> dict:
+    """Grade all retrieved chunks in a SINGLE batched LLM call (1 call vs TOP_K calls)."""
     question = state["question"]
     documents = state.get("documents", [])
     relevant: list[Document] = []
     grades: list[dict] = []
 
-    for doc in documents:
-        prompt = f"""You are grading document relevance for a Self-RAG academic assistant.
+    if not documents:
+        return {
+            "relevant_documents": [],
+            "grade_documents_result": {"grades": [], "relevant_count": 0},
+            "steps_log": _log(state, "GradeDocuments: no chunks to grade."),
+        }
+
+    # Build a single batched prompt for all chunks at once
+    chunks_text = ""
+    for idx, doc in enumerate(documents, 1):
+        source = doc.metadata.get("source", "unknown")
+        chunks_text += (
+            f'\n\n--- Chunk {idx} (source: {source}) ---\n'
+            f'{doc.page_content[:1500]}'
+        )
+
+    prompt = f"""You are grading document relevance for a Self-RAG academic assistant.
 
 Question: {question}
 
-Document chunk (source: {doc.metadata.get('source', 'unknown')}):
-{doc.page_content[:2000]}
+You have {len(documents)} document chunks to evaluate:
+{chunks_text}
 
-Return JSON with keys:
+Return a JSON ARRAY with exactly {len(documents)} objects, one per chunk in order.
+Each object must have:
+- "chunk_index": integer starting from 1
 - "binary_score": "yes" if the chunk helps answer the question, otherwise "no"
 - "reason": one short sentence explaining your decision
 """
-        result = grade_with_flash(prompt)
-        is_relevant = result.get("binary_score", "no").lower() == "yes"
+    raw = grade_with_flash(prompt)
+
+    # raw may be a list or a dict with a list inside
+    if isinstance(raw, dict):
+        # Some models wrap in a key; try common keys
+        for key in ("grades", "results", "chunks", "items"):
+            if isinstance(raw.get(key), list):
+                raw = raw[key]
+                break
+        else:
+            raw = []
+    if not isinstance(raw, list):
+        raw = []
+
+    for idx, doc in enumerate(documents):
+        # Match by position; fall back to last entry if model returned fewer items
+        entry = raw[idx] if idx < len(raw) else {}
+        is_relevant = str(entry.get("binary_score", "no")).lower() == "yes"
         grade_entry = {
             "source": doc.metadata.get("source"),
             "relevant": is_relevant,
-            "reason": result.get("reason", ""),
+            "reason": entry.get("reason", ""),
             "retrieval_score": doc.metadata.get("retrieval_score"),
         }
         grades.append(grade_entry)
         if is_relevant:
-            doc.metadata["grade_reason"] = result.get("reason", "")
+            doc.metadata["grade_reason"] = entry.get("reason", "")
             relevant.append(doc)
 
-    msg = (
-        f"GradeDocuments: {len(relevant)}/{len(documents)} chunks marked relevant."
-        if documents
-        else "GradeDocuments: no chunks to grade."
-    )
+    msg = f"GradeDocuments: {len(relevant)}/{len(documents)} chunks marked relevant (batched, 1 LLM call)."
 
     return {
         "relevant_documents": relevant,
