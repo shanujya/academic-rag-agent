@@ -80,14 +80,20 @@ academic-rag-agent/
 ├── requirements.txt
 ├── .env.example            # Template for environment variables
 ├── data/
+│   ├── eval_dataset.json   # 21-question evaluation dataset (in_domain / adversarial / complex)
+│   ├── eval_results.json   # Last benchmark run — full per-item results
+│   ├── eval_results.md     # Last benchmark run — Markdown summary table
 │   └── chromadb/           # Persistent ChromaDB vector store (git-ignored)
 ├── scripts/
-│   └── ingest.py           # Standalone CLI ingestion script
+│   ├── ingest.py           # Standalone CLI ingestion script
+│   └── run_eval.py         # CLI benchmark runner (Self-RAG vs Naive RAG)
 └── src/
     ├── agent/
     │   ├── graph.py        # LangGraph workflow: nodes, edges, routing logic
     │   ├── nodes.py        # Node implementations (retrieve, grade, generate, etc.)
     │   ├── llm.py          # Gemini client helpers with retry-on-429 logic
+    │   ├── evaluator.py    # LLM-as-a-judge evaluation engine
+    │   ├── naive_rag.py    # Baseline Naive RAG (retrieve → generate, no reflection)
     │   └── state.py        # AgentState TypedDict
     └── ingestion/
         ├── pdf_parser.py   # PDF → raw text via PyMuPDF
@@ -228,29 +234,48 @@ python-dotenv>=1.0.0
 
 ## 📊 Evaluation & Benchmarking
 
-The system includes an automated evaluation engine to quantitatively compare **Self-RAG** against a baseline **Naive RAG** implementation (`query -> retrieve(top_k) -> generate`).
+The system includes an automated evaluation engine to quantitatively compare **Self-RAG** against a baseline **Naive RAG** implementation (`query → retrieve(top_k) → generate`, no reflection loops).
 
 ### Evaluation Methodology
-- **Test Dataset**: 21 curated test cases across 3 categories:
-  - `in_domain` (7 questions): Directly answered by PDF library papers.
-  - `adversarial` (7 questions): Topics outside the paper library testing web search fallback trigger accuracy.
-  - `complex` (7 questions): Multi-paper synthesis and architectural comparisons.
-- **LLM-as-a-Judge**: Evaluates Faithfulness (groundedness in context) and Answer Relevancy using `gemini-flash-lite-latest` at `temperature=0.0`.
-- **Metrics Tracked**:
-  - **Faithfulness / Groundedness Rate (%)**: Claims supported by context.
-  - **Answer Relevancy Rate (%)**: Direct answering of prompt intent.
-  - **Fallback Trigger Accuracy (%)**: Correct web fallback decisions.
-  - **Hallucination Interception Rate (%)**: Draft hallucinations caught and fixed by generation retry loops.
-  - **Execution Overhead**: Average latency (seconds) and LLM API calls per query.
 
-> ⚠️ **Disclaimer**: Judge uses the same model family as the generator; treat results as relative comparison between naive and Self-RAG, not absolute quality scores.
+- **Test Dataset**: 21 curated questions across 3 categories:
+  - `in_domain` (7): Directly answered by PDF library papers.
+  - `adversarial` (7): Topics outside the paper library — tests web-search fallback trigger accuracy.
+  - `complex` (7): Multi-paper synthesis and architectural comparisons.
+- **LLM-as-a-Judge**: Faithfulness and Answer Relevancy scored by `JUDGE_MODEL` at `temperature=0.0`.
+- **Self-Correction metric**: Independently sourced from the pipeline's own `grade_generation_result` verdict — **not** re-derived from the Faithfulness judge, so the two numbers are genuinely independent.
+- **Batched chunk grading**: All `TOP_K` retrieved chunks are graded in a **single** LLM call, reducing per-query API calls from `TOP_K + 3` to `4` in the typical case.
+
+### Results (N = 21, run 2026-08-21)
+
+> ⚠️ **Disclaimer**: Judge uses the same model family as the generator; treat results as a relative comparison, not absolute quality scores.
+
+| Metric | Self-RAG | Naive RAG |
+| :--- | :---: | :---: |
+| **Faithfulness / Groundedness** | `95.2% (20/21)` | `100.0% (21/21)` |
+| **Answer Relevancy** | `42.9% (9/21)` | `33.3% (7/21)` |
+| **Fallback Trigger Accuracy** | `66.7% (14/21)` | `66.7% (14/21)` |
+| **Hallucination Self-Correction Rate** *(pipeline-reported)* | `93.3% (14/15)` | N/A (no self-correction) |
+| **Avg Latency per Query** | `27.65s` | `7.84s` |
+| **Avg LLM Calls per Query** | `6.14` | `1.00` |
+
+**Honest interpretation of results:**
+
+- **Faithfulness is near-ceiling for both pipelines** on this corpus (`95–100%`). This is a legitimate finding, not a tuning artifact: the ChromaDB index retrieves highly relevant chunks for most in-domain and complex questions, giving the generator strong grounding signal regardless of reflection loops. Self-RAG's advantage on this corpus shows up primarily in **answer relevancy (+9.6 pp)** and **self-correction** (15 of 21 runs triggered at least one hallucination flag; 14 of 15 were resolved on retry), not in faithfulness separation.
+- **Fallback accuracy (66.7%)** is equal between pipelines because both share the same retrieval step; improving this would require tuning the relevance-grading threshold, not the generation pipeline.
+- **Latency and call count** reflect the cost of reflection: Self-RAG averages `6.14` LLM calls/query vs `1.00` for Naive RAG — each reflection loop (grade_documents + generate + grade_generation + grade_answer) adds roughly `4` calls.
 
 ### Running the Evaluation CLI
 
-To run the evaluation pipeline and compare against Naive RAG:
-
 ```bash
+# Full benchmark — both pipelines, saves JSON + Markdown results
 python scripts/run_eval.py --compare-naive --save-results
+
+# Quick stratified smoke-test (3 questions per category, ~5 min)
+python scripts/run_eval.py --sample 9 --compare-naive --save-results
+
+# Tune pacing for paid tiers (lower sleep = faster)
+python scripts/run_eval.py --compare-naive --save-results --sleep 1
 ```
 
 Results are saved to [`data/eval_results.json`](data/eval_results.json) and [`data/eval_results.md`](data/eval_results.md).

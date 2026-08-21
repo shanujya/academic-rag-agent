@@ -65,10 +65,10 @@ def print_summary_table(self_rag_eval: dict, naive_eval: dict | None = None):
         row_fall += f" | {naive_eval['fallback_acc_pct']:<20}"
     print(row_fall)
 
-    # Hallucination Interception
-    row_hall = f"{'Hallucination Interception Rate':<32} | {self_rag_eval['hallucination_interception_pct']:<22}"
+    # Hallucination Self-Correction Rate (pipeline-reported)
+    row_hall = f"{'Hallucination Self-Correction Rate':<32} | {self_rag_eval['hallucination_interception_pct']:<22}"
     if naive_eval:
-        row_hall += f" | {'N/A (no reflection)':<20}"
+        row_hall += f" | {'N/A (no self-correction)':<20}"
     print(row_hall)
 
     # Latency
@@ -111,7 +111,7 @@ def generate_markdown_report(self_rag_eval: dict, naive_eval: dict | None = None
     md.append(f"| **Faithfulness / Groundedness** | `{self_rag_eval['faithfulness_pct']}` | `{faith_naive}` |")
     md.append(f"| **Answer Relevancy** | `{self_rag_eval['relevancy_pct']}` | `{rel_naive}` |")
     md.append(f"| **Fallback Trigger Accuracy** | `{self_rag_eval['fallback_acc_pct']}` | `{fall_naive}` |")
-    md.append(f"| **Hallucination Interception Rate** | `{self_rag_eval['hallucination_interception_pct']}` | `N/A (No reflection)` |")
+    md.append(f"| **Hallucination Self-Correction Rate** *(pipeline-reported, from `grade_generation_result`; independent of Faithfulness judge)* | `{self_rag_eval['hallucination_interception_pct']}` | `N/A (No self-correction)` |")
     md.append(f"| **Avg Latency per Query** | `{self_rag_eval['avg_latency_seconds']:.2f}s` | `{lat_naive}` |")
     md.append(f"| **Avg LLM Calls per Query** | `{self_rag_eval['avg_llm_calls']:.2f}` | `{calls_naive}` |")
 

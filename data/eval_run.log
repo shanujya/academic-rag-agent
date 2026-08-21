@@ -1,0 +1,636 @@
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/src/agent/nodes.py:130: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  with DDGS() as ddgs:
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/types.py:944: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  self.name() is NotImplemented
+/home/shanujya/academic-rag-agent/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:791: DeprecationWarning: The EmbeddingFunction class does not implement name(). This will be required in a future version.
+  embedding_function.name() != "default"
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+
+🚀 Starting evaluation benchmark on 21 questions...
+   ⏱  Inter-item sleep: 5.0s  |  Batched chunk grading: ON
+
+[1/2] Evaluating Self-RAG Pipeline...
+  ✓ Processed 1/21 items (Self-RAG)
+  ✓ Processed 2/21 items (Self-RAG)
+  ✓ Processed 3/21 items (Self-RAG)
+  ✓ Processed 4/21 items (Self-RAG)
+  ✓ Processed 5/21 items (Self-RAG)
+  ✓ Processed 6/21 items (Self-RAG)
+  ✓ Processed 7/21 items (Self-RAG)
+  ✓ Processed 8/21 items (Self-RAG)
+  ✓ Processed 9/21 items (Self-RAG)
+  ✓ Processed 10/21 items (Self-RAG)
+  ✓ Processed 11/21 items (Self-RAG)
+  ✓ Processed 12/21 items (Self-RAG)
+  ✓ Processed 13/21 items (Self-RAG)
+  ✓ Processed 14/21 items (Self-RAG)
+  ✓ Processed 15/21 items (Self-RAG)
+  ✓ Processed 16/21 items (Self-RAG)
+  ✓ Processed 17/21 items (Self-RAG)
+  ✓ Processed 18/21 items (Self-RAG)
+  ✓ Processed 19/21 items (Self-RAG)
+  ✓ Processed 20/21 items (Self-RAG)
+  ✓ Processed 21/21 items (Self-RAG)
+
+[2/2] Evaluating Baseline Naive RAG Pipeline...
+  ✓ Processed 1/21 items (Naive RAG)
+  ✓ Processed 2/21 items (Naive RAG)
+  ✓ Processed 3/21 items (Naive RAG)
+  ✓ Processed 4/21 items (Naive RAG)
+  ✓ Processed 5/21 items (Naive RAG)
+  ✓ Processed 6/21 items (Naive RAG)
+  ✓ Processed 7/21 items (Naive RAG)
+  ✓ Processed 8/21 items (Naive RAG)
+  ✓ Processed 9/21 items (Naive RAG)
+  ✓ Processed 10/21 items (Naive RAG)
+  ✓ Processed 11/21 items (Naive RAG)
+  ✓ Processed 12/21 items (Naive RAG)
+  ✓ Processed 13/21 items (Naive RAG)
+  ✓ Processed 14/21 items (Naive RAG)
+  ✓ Processed 15/21 items (Naive RAG)
+  ✓ Processed 16/21 items (Naive RAG)
+  ✓ Processed 17/21 items (Naive RAG)
+  ✓ Processed 18/21 items (Naive RAG)
+  ✓ Processed 19/21 items (Naive RAG)
+  ✓ Processed 20/21 items (Naive RAG)
+  ✓ Processed 21/21 items (Naive RAG)
+
+================================================================================
+ 📊 ACADEMIC SELF-RAG EVALUATION SUMMARY
+================================================================================
+ Disclaimer: Judge uses the same model family as the generator; treat results as relative comparison between naive and Self-RAG, not absolute quality scores.
+--------------------------------------------------------------------------------
+Metric                           | Self-RAG               | Naive RAG           
+--------------------------------------------------------------------------------
+Faithfulness / Groundedness      | 95.2% (20/21)          | 100.0% (21/21)      
+Answer Relevancy                 | 42.9% (9/21)           | 33.3% (7/21)        
+Fallback Trigger Accuracy        | 66.7% (14/21)          | 66.7% (14/21)       
+Hallucination Self-Correction Rate | 93.3% (14/15)          | N/A (no self-correction)
+Avg Latency (seconds)            | 27.65                  | 7.84                
+Avg LLM Calls / Query            | 6.14                   | 1.00                
+================================================================================
+
+✅ Saved results to:
+  - /home/shanujya/academic-rag-agent/data/eval_results.json
+  - /home/shanujya/academic-rag-agent/data/eval_results.md

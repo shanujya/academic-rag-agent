@@ -83,18 +83,35 @@ def evaluate_fallback_accuracy(actual_fallback_used: bool, expected_fallback: bo
 
 
 def calculate_self_rag_llm_calls(result: dict) -> int:
-    """Calculate total LLM calls made during a Self-RAG execution graph run."""
+    """Count actual Self-RAG LLM API calls for one full pipeline run.
+
+    - grade_documents: 1 batched call regardless of chunk count (if any docs were graded).
+      Previously this used len(grades) which counted *chunks*, not *API calls*,
+      inflating every run's llm_calls by (TOP_K - 1). Fixed to always be 1.
+    - Each generation attempt: 1 generate call + 1 grade_generation call.
+    - Each retrieve cycle: 1 grade_answer call.
+    """
     grades = result.get("grade_documents_result", {}).get("grades", [])
-    doc_grade_calls = len(grades)
+    doc_grade_calls = 1 if grades else 0          # batched: always 1 call, not len(grades)
     gen_retries = result.get("generation_retries", 1)
     ret_cycles = result.get("retrieve_cycles", 1)
-    # Each generation attempt does 1 generate + 1 grade_generation call
-    # Each retrieve cycle does 1 grade_answer call
     return doc_grade_calls + (gen_retries * 2) + ret_cycles
 
 
 def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = True) -> dict:
-    """Evaluate metrics for a single test item execution result."""
+    """Evaluate metrics for a single test item execution result.
+
+    Metric independence note
+    ------------------------
+    ``faithfulness`` is scored by an **external LLM judge** (JUDGE_MODEL) that reads
+    the retrieved context and the generated answer independently.
+
+    ``hallucination_intercepted`` is derived from the pipeline's **own internal**
+    ``grade_generation_result`` grounding check — the verdict the Self-RAG graph
+    itself produced on the final generation attempt. These are kept intentionally
+    separate so the two numbers are independently sourced and can diverge, giving
+    a meaningful comparison rather than restating the same underlying judge call.
+    """
     question = item["question"]
     expected_fallback = item["should_trigger_web_fallback"]
 
@@ -111,6 +128,7 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
     if web_context:
         context_str += f"\n\nWeb Fallback:\n{web_context}"
 
+    # External judge scores (independent of the pipeline's own self-checks)
     faithfulness = evaluate_faithfulness(question, context_str, answer)
     relevancy = evaluate_relevancy(question, answer)
     fallback_acc = evaluate_fallback_accuracy(actual_fallback, expected_fallback)
@@ -120,16 +138,22 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
     else:
         llm_calls = pipeline_result.get("num_llm_calls", 1)
 
-    # Detect hallucination interception in Self-RAG
+    # Hallucination self-correction — measured from the pipeline's OWN internal
+    # grounding check (grade_generation_result), NOT re-derived from the external
+    # faithfulness judge.  This keeps the two metrics genuinely independent.
     hallucination_flagged = False
     hallucination_intercepted = False
     if is_self_rag:
         gen_retries = pipeline_result.get("generation_retries", 1)
         steps_log = pipeline_result.get("steps_log", [])
         has_hallucination_log = any("hallucinated" in log for log in steps_log)
+
         if gen_retries > 1 or has_hallucination_log:
             hallucination_flagged = True
-            if faithfulness == 1:
+            # Use the pipeline's own final grounding verdict, not the external judge.
+            final_grade = pipeline_result.get("grade_generation_result", {})
+            grounded_on_final_attempt = str(final_grade.get("grounded", "no")).lower() == "yes"
+            if grounded_on_final_attempt:
                 hallucination_intercepted = True
 
     return {
