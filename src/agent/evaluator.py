@@ -131,11 +131,12 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
     # External judge scores (independent of the pipeline's own self-checks)
     faithfulness = evaluate_faithfulness(question, context_str, answer)
     relevancy = evaluate_relevancy(question, answer)
-    fallback_acc = evaluate_fallback_accuracy(actual_fallback, expected_fallback)
 
     if is_self_rag:
+        fallback_acc = evaluate_fallback_accuracy(actual_fallback, expected_fallback)
         llm_calls = calculate_self_rag_llm_calls(pipeline_result)
     else:
+        fallback_acc = None  # Naive RAG has no fallback mechanism — not a comparable metric
         llm_calls = pipeline_result.get("num_llm_calls", 1)
 
     # Hallucination self-correction — measured from the pipeline's OWN internal
@@ -171,6 +172,10 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
         "hallucination_intercepted": hallucination_intercepted,
         "latency_seconds": pipeline_result.get("latency_seconds", 0.0),
         "llm_calls": llm_calls,
+        "context_char_count": len(context_str),
+        "context_preview": context_str[:300],
+        "web_context_used": bool(web_context),
+        "web_context_char_count": len(web_context) if web_context else 0,
     }
 
 
@@ -243,7 +248,8 @@ def evaluate_dataset(
 
         total_faithfulness += eval_res["faithfulness"]
         total_relevancy += eval_res["relevancy"]
-        total_fallback_acc += eval_res["fallback_accuracy"]
+        if eval_res["fallback_accuracy"] is not None:
+            total_fallback_acc += eval_res["fallback_accuracy"]
         total_latency += eval_res["latency_seconds"]
         total_llm_calls += eval_res["llm_calls"]
 
@@ -272,8 +278,12 @@ def evaluate_dataset(
         "faithfulness_pct": f"{round((total_faithfulness / total) * 100, 1)}% ({total_faithfulness}/{total})",
         "relevancy_score": total_relevancy,
         "relevancy_pct": f"{round((total_relevancy / total) * 100, 1)}% ({total_relevancy}/{total})",
-        "fallback_acc_score": total_fallback_acc,
-        "fallback_acc_pct": f"{round((total_fallback_acc / total) * 100, 1)}% ({total_fallback_acc}/{total})",
+        "fallback_acc_score": total_fallback_acc if is_self_rag else None,
+        "fallback_acc_pct": (
+            f"{round((total_fallback_acc / total) * 100, 1)}% ({total_fallback_acc}/{total})"
+            if is_self_rag
+            else "N/A (no fallback mechanism)"
+        ),
         "hallucination_flagged_count": hallucination_flagged_count,
         "hallucination_intercepted_count": hallucination_intercepted_count,
         "hallucination_interception_pct": (
