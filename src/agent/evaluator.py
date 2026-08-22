@@ -6,7 +6,7 @@ from typing import Callable, Any
 from google import genai
 from google.genai import types
 
-from config import JUDGE_MODEL, JUDGE_BIAS_DISCLAIMER
+from config import JUDGE_MODEL, JUDGE_BIAS_DISCLAIMER, MIN_USEFUL_WEB_CONTEXT_CHARS
 from src.agent.llm import get_client, _call_with_retry, _parse_json_response
 
 
@@ -117,12 +117,21 @@ def evaluate_single_run(item: dict, pipeline_result: dict, is_self_rag: bool = T
 
     answer = pipeline_result.get("generation") if is_self_rag else pipeline_result.get("answer", "")
     web_context = pipeline_result.get("web_context", "")
-    actual_fallback = bool(web_context and "WebSearch:" in "".join(pipeline_result.get("steps_log", []))) if is_self_rag else False
+    actual_fallback = bool(
+        web_context
+        and len(web_context) >= MIN_USEFUL_WEB_CONTEXT_CHARS
+        and "WebSearch:" in "".join(pipeline_result.get("steps_log", []))
+    ) if is_self_rag else False
 
     # Extract retrieved context
-    docs = pipeline_result.get("relevant_documents") if is_self_rag else pipeline_result.get("retrieved_chunks", [])
-    if not docs and is_self_rag:
-        docs = pipeline_result.get("documents", [])
+    if is_self_rag:
+        docs = pipeline_result.get("relevant_documents")
+        if docs is None:
+            # Key truly absent from state — fall back as a safety net.
+            # Do NOT fall back just because grading correctly filtered everything out.
+            docs = pipeline_result.get("documents", [])
+    else:
+        docs = pipeline_result.get("retrieved_chunks", [])
 
     context_str = "\n\n".join(d.page_content if hasattr(d, "page_content") else str(d) for d in docs)
     if web_context:

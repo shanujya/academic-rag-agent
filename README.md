@@ -252,18 +252,18 @@ The system includes an automated evaluation engine to quantitatively compare **S
 
 | Metric | Self-RAG | Naive RAG |
 | :--- | :---: | :---: |
-| **Faithfulness / Groundedness** | `100.0% (21/21)` | `100.0% (21/21)` |
-| **Answer Relevancy** | `42.9% (9/21)` | `33.3% (7/21)` |
-| **Fallback Trigger Accuracy** | `66.7% (14/21)` | `N/A (no fallback mechanism)` |
-| **Hallucination Self-Correction Rate** *(pipeline-reported)* | `100.0% (15/15)` | N/A (no self-correction) |
-| **Avg Latency per Query** | `19.04s` | `3.99s` |
-| **Avg LLM Calls per Query** | `6.14` | `1.00` |
+| **Faithfulness / Groundedness** | `95.2% (20/21)` | `100.0% (21/21)` |
+| **Answer Relevancy** | `38.1% (8/21)` | `33.3% (7/21)` |
+| **Fallback Trigger Accuracy** | `71.4% (15/21)` | `N/A (no fallback mechanism)` |
+| **Hallucination Self-Correction Rate** *(pipeline-reported)* | `93.8% (15/16)` | N/A (no self-correction) |
+| **Avg Latency per Query** | `28.51s` | `5.30s` |
+| **Avg LLM Calls per Query** | `6.24` | `1.00` |
 
 **Honest interpretation of results:**
 
-- **Faithfulness is near-ceiling for both pipelines** on this corpus (`100%`). This is a legitimate finding, not a tuning artifact: the ChromaDB index retrieves highly relevant chunks for most in-domain and complex questions, giving the generator strong grounding signal regardless of reflection loops. Self-RAG's advantage on this corpus shows up primarily in **answer relevancy (+9.6 pp)** and **self-correction** (15 of 21 runs triggered at least one hallucination flag; 15 of 15 were resolved on retry), not in faithfulness separation.
-- **Fallback Trigger Accuracy is Self-RAG only.** Naive RAG has no relevance-grading or web-search-fallback mechanism, so there is no equivalent decision to score — it always answers from local retrieval alone, regardless of whether the question is in-domain.
-- **Latency and call count** reflect the cost of reflection: Self-RAG averages `6.14` LLM calls/query vs `1.00` for Naive RAG — each reflection loop (grade_documents + generate + grade_generation + grade_answer) adds roughly `4` calls.
+- **Faithfulness is near-ceiling for both pipelines** on this corpus (`95–100%`). This is a legitimate finding, not a tuning artifact: the ChromaDB index retrieves highly relevant chunks for most in-domain and complex questions, giving the generator strong grounding signal regardless of reflection loops. Self-RAG's advantage on this corpus shows up primarily in **answer relevancy (+4.8 pp)**, **self-correction** (16 of 21 runs triggered at least one hallucination flag; 15 of 16 were resolved on retry), and **fallback accuracy** (`71.4%`).
+- **Fallback Trigger Accuracy is Self-RAG only (`71.4%`).** Naive RAG has no relevance-grading or web-search-fallback mechanism, so there is no equivalent decision to score — it always answers from local retrieval alone, regardless of whether the question is in-domain.
+- **Latency and call count** reflect the cost of reflection: Self-RAG averages `6.24` LLM calls/query vs `1.00` for Naive RAG — each reflection loop (grade_documents + generate + grade_generation + grade_answer) adds roughly `4–5` calls.
 
 ### Running the Evaluation CLI
 

@@ -32,3 +32,6 @@ CHUNK_OVERLAP = 200
 MAX_GENERATION_RETRIES = 2
 MAX_RETRIEVE_CYCLES = 2
 
+# Evaluation quality threshold
+MIN_USEFUL_WEB_CONTEXT_CHARS = 100  # below this, treat web search as having failed/returned nothing useful
+
