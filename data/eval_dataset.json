@@ -5,7 +5,9 @@
     "question": "What formula is used for scaled dot-product attention in the Transformer paper, and why is scaling by sqrt(d_k) necessary?",
     "ground_truth_answer": "Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V. Scaling by sqrt(d_k) prevents the dot products from growing large in magnitude for large values of d_k, which would push the softmax function into regions with extremely small gradients.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["01_attention_is_all_you_need.pdf"],
+    "relevant_source_files": [
+      "01_attention_is_all_you_need.pdf"
+    ],
     "notes": "Core mathematical formulation of Transformer attention from Attention Is All You Need."
   },
   {
@@ -14,7 +16,9 @@
     "question": "How does BERT pre-training differ from traditional left-to-right language models, and what are its two pre-training objectives?",
     "ground_truth_answer": "BERT uses a bidirectional Transformer encoder instead of unidirectional left-to-right training. Its two pre-training objectives are Masked Language Modeling (MLM), where random tokens are masked and predicted, and Next Sentence Prediction (NSP), predicting whether sentence B follows sentence A.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["02_bert_pre-training_of_deep_bidirectional_transformers.pdf"],
+    "relevant_source_files": [
+      "02_bert_pre-training_of_deep_bidirectional_transformers.pdf"
+    ],
     "notes": "Evaluates BERT architecture and pre-training task definitions."
   },
   {
@@ -23,7 +27,9 @@
     "question": "How does Low-Rank Adaptation (LoRA) parameterize weight updates during fine-tuning, and how does it reduce memory overhead?",
     "ground_truth_answer": "LoRA freezes the pre-trained weight matrix W_0 and injects trainable rank decomposition matrices: W = W_0 + Delta W = W_0 + B * A, where B is in R^(d x r) and A is in R^(r x k) with rank r << min(d, k). This drastically reduces trainable parameters and GPU VRAM required for optimizer states.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["04_lora_low-rank_adaptation_of_large_language_models.pdf"],
+    "relevant_source_files": [
+      "04_lora_low-rank_adaptation_of_large_language_models.pdf"
+    ],
     "notes": "Tests understanding of LoRA rank decomposition mechanism."
   },
   {
@@ -32,7 +38,9 @@
     "question": "What GPU memory hierarchy bottleneck does FlashAttention address, and how does it reduce memory access overhead?",
     "ground_truth_answer": "FlashAttention addresses the High Bandwidth Memory (HBM) IO bottleneck. It uses tiling to load blocks of Q, K, V from HBM into fast GPU SRAM, computes attention incrementally without storing intermediate N x N attention matrices in HBM, and uses recomputation during the backward pass.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["05_flashattention_fast_and_memory-efficient_exact_attention.pdf"],
+    "relevant_source_files": [
+      "05_flashattention_fast_and_memory-efficient_exact_attention.pdf"
+    ],
     "notes": "Tests hardware-aware IO attention optimization concepts."
   },
   {
@@ -41,7 +49,9 @@
     "question": "What are the key reflection tokens used in Self-RAG, and what does each evaluate?",
     "ground_truth_answer": "Self-RAG defines reflection tokens including: Retrieve (decides whether to retrieve external documents), ISREL (evaluates whether retrieved chunk is relevant to prompt), ISSUP (evaluates whether generated response is grounded in retrieved context), and ISUSE (evaluates overall utility/quality of response).",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["10_self-rag_learning_to_retrieve_generate_and_self-reflect.pdf"],
+    "relevant_source_files": [
+      "10_self-rag_learning_to_retrieve_generate_and_self-reflect.pdf"
+    ],
     "notes": "Directly targets the foundational paper behind this agent's architecture."
   },
   {
@@ -50,7 +60,9 @@
     "question": "How does Mamba differ from standard State Space Models (SSMs) to achieve selective sequence modeling?",
     "ground_truth_answer": "Traditional SSMs use time-invariant parameters, preventing them from filtering out irrelevant context based on the input. Mamba introduces selective SSMs where parameters (B, C, Delta) are input-dependent functions, allowing dynamic sequence selection while using a hardware-aware parallel algorithm.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["11_mamba_linear-time_sequence_modeling.pdf"],
+    "relevant_source_files": [
+      "11_mamba_linear-time_sequence_modeling.pdf"
+    ],
     "notes": "Tests selective state space parameter dynamics."
   },
   {
@@ -59,7 +71,9 @@
     "question": "How many total and active parameters per token does Mixtral 8x7B have, and how does its routing mechanism work?",
     "ground_truth_answer": "Mixtral 8x7B has 47B total parameters but activates only 13B active parameters per token. It uses a router network to select 2 out of 8 expert feed-forward networks for each token at every layer.",
     "should_trigger_web_fallback": false,
-    "relevant_source_files": ["12_mixtral_of_experts.pdf"],
+    "relevant_source_files": [
+      "12_mixtral_of_experts.pdf"
+    ],
     "notes": "Tests parameter allocation and top-2 MoE routing mechanism."
   },
   {
@@ -208,5 +222,59 @@
       "Bahdanou_attention_mechanism.pdf"
     ],
     "notes": "Historical architecture evolution from additive seq2seq attention to dot-product Transformer attention."
+  },
+  {
+    "id": "q022",
+    "category": "in_domain",
+    "question": "How do Denoising Diffusion Probabilistic Models (DDPM) formulate the forward noising process q(x_t | x_0) and the parameterized reverse denoising process p_theta(x_{t-1} | x_t)?",
+    "ground_truth_answer": "The forward process iteratively adds Gaussian noise according to a variance schedule beta_1, ..., beta_T, allowing direct sampling of x_t at any timestep t via x_t = sqrt(alpha_bar_t) * x_0 + sqrt(1 - alpha_bar_t) * epsilon. The reverse process is parameterized by a neural network (typically a U-Net) trained to predict the noise epsilon_theta(x_t, t) added at timestep t using a simplified mean squared error loss objective.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "Denoising Diffusion Probabilistic Models.pdf"
+    ],
+    "notes": "Core mathematical formulation of DDPM forward and reverse processes."
+  },
+  {
+    "id": "q023",
+    "category": "complex",
+    "question": "Contrast how Denoising Diffusion Probabilistic Models (DDPM) generate outputs through iterative latent denoising timesteps versus how autoregressive Transformers generate tokens sequentially.",
+    "ground_truth_answer": "DDPMs operate over a continuous latent space across fixed discrete diffusion timesteps T, refining an entire image/representation simultaneously from random Gaussian noise by predicting added noise at each step. Autoregressive Transformers generate discrete tokens sequentially left-to-right (or causal order), where each new token is appended to the KV-cache context for predicting the next token.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "Denoising Diffusion Probabilistic Models.pdf",
+      "01_attention_is_all_you_need.pdf"
+    ],
+    "notes": "Multi-paper comparison between iterative diffusion noise sampling and autoregressive sequence generation."
+  },
+  {
+    "id": "q024",
+    "category": "adversarial",
+    "question": "What is the architecture and rectified flow matching objective of the Flux.1 diffusion transformer model?",
+    "ground_truth_answer": "Flux.1 uses a hybrid Rectified Flow Transformer architecture with dual-stream and single-stream attention blocks for text-to-image synthesis, trained via flow matching rather than standard DDPM Gaussian noise prediction.",
+    "should_trigger_web_fallback": true,
+    "relevant_source_files": [],
+    "notes": "Out-of-domain query on recent Flux flow-matching diffusion transformers."
+  },
+  {
+    "id": "q025",
+    "category": "in_domain",
+    "question": "According to the lecture notes structure, how are continuous-time score-based diffusion models and their subsequent discretization handled across the movements, and what specific equivalence links continuous DDPM reverse kernels to score estimation?",
+    "ground_truth_answer": "In Jianfeng Lu's notes, the second movement builds continuous-time score-based diffusion models through Gaussian noising, Tweedie\u2019s identity, the reverse-time SDE, and the probability flow ODE, alongside stochastic localization and Polchinski flow. The third movement then discretizes these continuous dynamics into implementable DDPM samplers, covering exact and Gaussian reverse kernels as well as the denoising-score equivalence. The specific analytical link between the reverse kernels and score estimation is established via the denoising-score equivalence, which connects the optimal denoiser (expressed through Tweedie's identity) directly to the score function of the perturbed distribution.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "A Mathematical Introduction to Diffusion Models.pdf"
+    ],
+    "notes": "Evaluates understanding of the paper's structural progression from continuous score-based models to discrete DDPM samplers and the denoising-score equivalence."
+  },
+  {
+    "id": "q026",
+    "category": "complex",
+    "question": "The paper outlines a rigorous mathematical treatment of diffusion models using stochastic differential equations (SDEs), Fokker-Planck evolution, and score-matching. Contrast this continuous-time, measure-transport paradigm with discrete, token-based architectures like Transformers (which rely on attention mechanisms and discrete sequence modeling). How do their mechanisms for handling uncertainty and state transformation differ fundamentally?",
+    "ground_truth_answer": "Diffusion models and Transformers handle uncertainty and state transformation through fundamentally distinct mathematical and computational frameworks. Diffusion models operate in continuous space (or continuous-time Markov chains in discrete diffusion), transforming noise into structured data via stochastic differential equations (SDEs), reverse-time processes, and deterministic probability flow ODEs guided by gradient vector fields (score functions). Uncertainty is managed by probability distributions governed by Fokker-Planck equations and entropy dissipation. In contrast, Transformers process data through discrete tokens or continuous embeddings via self-attention layers and feedforward networks, capturing long-range dependencies through combinatorial weighting of sequence elements rather than explicit physical or geometric transport along a diffusion path. While diffusion models rely on iterative numerical integration of differential equations for generation, Transformers typically generate autoregressively or via masked prediction over discrete spaces, though modern hybrids leverage transformer backbones (e.g., DiT) to parameterize the score or velocity fields.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "A Mathematical Introduction to Diffusion Models.pdf"
+    ],
+    "notes": "Synthesizes the continuous stochastic calculus perspective of diffusion models from the paper with the discrete attention-based nature of Transformer models."
   }
 ]
