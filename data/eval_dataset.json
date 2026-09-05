@@ -276,5 +276,27 @@
       "A Mathematical Introduction to Diffusion Models.pdf"
     ],
     "notes": "Synthesizes the continuous stochastic calculus perspective of diffusion models from the paper with the discrete attention-based nature of Transformer models."
+  },
+  {
+    "id": "q027",
+    "category": "in_domain",
+    "question": "What is the mathematical formulation of the Flow Matching (FM) objective loss function $L_{FM}(\theta)$, and how does it relate the neural network vector field $v_t(x)$ to the target vector field $u_t(x)$?",
+    "ground_truth_answer": "The Flow Matching objective is defined as $L_{FM}(\theta) = \\mathbb{E}_{t, p_t(x)} \\|v_t(x) - u_t(x)\\|^2$, where $\theta$ represents the learnable parameters of the Continuous Normalizing Flow (CNF) vector field $v_t$, $t$ is uniformly distributed over $[0, 1]$ ($t \\sim \\mathcal{U}[0, 1]$), and $x$ is sampled from the target probability density path $p_t(x)$ ($x \\sim p_t(x)$). This objective regresses the neural network vector field $v_t$ onto the target vector field $u_t$ that generates the desired probability path $p_t(x)$.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "FLOW MATCHING FOR GENERATIVE MODELING.pdf"
+    ],
+    "notes": "Evaluates understanding of the core Flow Matching loss equation introduced in Section 3."
+  },
+  {
+    "id": "q028",
+    "category": "complex",
+    "question": "Contrast the simulation-free training approach of Flow Matching (FM) for Continuous Normalizing Flows (CNFs) with traditional maximum likelihood training of CNFs or score-based diffusion models. Why does FM bypass the computational bottlenecks associated with traditional methods?",
+    "ground_truth_answer": "Traditional maximum likelihood training of CNFs (e.g., Grathwohl et al., 2018) requires expensive numerical ODE simulations during the inner loop of training, while other simulation-free methods suffer from intractable integrals or biased gradients. Score-based diffusion models rely on denoising score matching to bypass simulation, but are restricted to specific diffusion processes that produce curved trajectories and require specialized sampling techniques. In contrast, Flow Matching introduces a simulation-free approach via Conditional Flow Matching (CFM) that regresses vector fields of fixed conditional probability paths using per-example formulations. This completely avoids the need for expensive trajectory simulations during training and allows the use of flexible, non-diffusion paths such as Optimal Transport (OT) displacement interpolants, which yield straight-line trajectories, faster sampling, and improved generalization.",
+    "should_trigger_web_fallback": false,
+    "relevant_source_files": [
+      "FLOW MATCHING FOR GENERATIVE MODELING.pdf"
+    ],
+    "notes": "Evaluates synthesis of FM compared against classical CNF likelihood training and diffusion score matching."
   }
 ]
