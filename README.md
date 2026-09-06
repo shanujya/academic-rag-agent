@@ -142,7 +142,7 @@ cp .env.example .env
 Edit `.env` and add your Gemini API key:
 
 ```env
-GEMINI_API_KEY="your_gemini_api_key_here"
+GEMINI_API_KEY=your_api_key_here
 ```
 
 > ⚠️ **Never commit `.env` to git.** It is already listed in `.gitignore`.
@@ -249,24 +249,24 @@ The system includes an automated evaluation engine to quantitatively compare **S
 - **Self-Correction metric**: Independently sourced from the pipeline's own `grade_generation_result` verdict — **not** re-derived from the Faithfulness judge, so the two numbers are genuinely independent.
 - **Batched chunk grading**: All `TOP_K` retrieved chunks are graded in a **single** LLM call, reducing per-query API calls from `TOP_K + 3` to `4` in the typical case.
 
-### Results (N = 21, run 2026-08-22 — dataset has since grown to 28 questions; re-run pending)
+### Results (N = 28, run 2026-09-06)
 
 > ⚠️ **Disclaimer**: Judge uses the same model family as the generator; treat results as a relative comparison, not absolute quality scores.
 
 | Metric | Self-RAG | Naive RAG |
 | :--- | :---: | :---: |
-| **Faithfulness / Groundedness** | `95.2% (20/21)` | `100.0% (21/21)` |
-| **Answer Relevancy** | `38.1% (8/21)` | `33.3% (7/21)` |
-| **Fallback Trigger Accuracy** | `71.4% (15/21)` | `N/A (no fallback mechanism)` |
-| **Hallucination Self-Correction Rate** *(pipeline-reported)* | `93.8% (15/16)` | N/A (no self-correction) |
-| **Avg Latency per Query** | `28.51s` | `5.30s` |
-| **Avg LLM Calls per Query** | `6.24` | `1.00` |
+| **Faithfulness / Groundedness** | `96.4% (27/28)` | `100.0% (28/28)` |
+| **Answer Relevancy** | `28.6% (8/28)` | `17.9% (5/28)` |
+| **Fallback Trigger Accuracy** | `71.4% (20/28)` | `N/A (no fallback mechanism)` |
+| **Hallucination Self-Correction Rate** *(pipeline-reported, independent of Faithfulness judge)* | `90.9% (20/22)` | `N/A (no self-correction)` |
+| **Avg Latency per Query** | `28.21s` | `6.90s` |
+| **Avg LLM Calls per Query** | `6.39` | `1.00` |
 
 **Honest interpretation of results:**
 
-- **Faithfulness is near-ceiling for both pipelines** on this corpus (`95–100%`). This is a legitimate finding, not a tuning artifact: the ChromaDB index retrieves highly relevant chunks for most in-domain and complex questions, giving the generator strong grounding signal regardless of reflection loops. Self-RAG's advantage on this corpus shows up primarily in **answer relevancy (+4.8 pp)**, **self-correction** (16 of 21 runs triggered at least one hallucination flag; 15 of 16 were resolved on retry), and **fallback accuracy** (`71.4%`).
-- **Fallback Trigger Accuracy is Self-RAG only (`71.4%`).** Naive RAG has no relevance-grading or web-search-fallback mechanism, so there is no equivalent decision to score — it always answers from local retrieval alone, regardless of whether the question is in-domain.
-- **Latency and call count** reflect the cost of reflection: Self-RAG averages `6.24` LLM calls/query vs `1.00` for Naive RAG — each reflection loop (grade_documents + generate + grade_generation + grade_answer) adds roughly `4–5` calls.
+- **Faithfulness is near-ceiling for both pipelines** on this expanded corpus (`96–100%`). The ChromaDB index retrieves highly relevant chunks for most in-domain and complex questions, giving the generator strong grounding signal regardless of reflection loops. Self-RAG's advantage shows up in **answer relevancy (+10.7 pp)**, **self-correction** (22 of 28 runs triggered at least one hallucination flag; 20 of 22 were resolved on retry), and **fallback accuracy** (`71.4%`).
+- **Fallback Trigger Accuracy is Self-RAG only (`71.4%`).** Naive RAG has no relevance-grading or web-search-fallback mechanism — it always answers from local retrieval alone, regardless of whether the question is in-domain.
+- **Latency and call count** reflect the cost of reflection: Self-RAG averages `6.39` LLM calls/query vs `1.00` for Naive RAG — each reflection loop (grade_documents + generate + grade_generation + grade_answer) adds roughly `4–5` calls.
 
 ### Running the Evaluation CLI
 

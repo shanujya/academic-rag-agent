@@ -9,7 +9,7 @@ from src.ingestion.pdf_parser import extract_pdf_text
 
 
 def list_paper_pdfs(pdf_dir: Path | None = None) -> list[Path]:
-    """Return numbered academic PDFs (01-12) from the paper directory."""
+    """Return numbered academic PDFs from the paper directory."""
     root = pdf_dir or PDF_DIR
     pdfs = sorted(root.glob("*.pdf"))
     numbered = [p for p in pdfs if p.name[:2].isdigit()]
