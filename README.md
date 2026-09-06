@@ -80,13 +80,14 @@ academic-rag-agent/
 ├── requirements.txt
 ├── .env.example            # Template for environment variables
 ├── data/
-│   ├── eval_dataset.json   # 21-question evaluation dataset (in_domain / adversarial / complex)
+│   ├── eval_dataset.json   # 28-question evaluation dataset (in_domain / adversarial / complex)
 │   ├── eval_results.json   # Last benchmark run — full per-item results
 │   ├── eval_results.md     # Last benchmark run — Markdown summary table
 │   └── chromadb/           # Persistent ChromaDB vector store (git-ignored)
 ├── scripts/
-│   ├── ingest.py           # Standalone CLI ingestion script
-│   └── run_eval.py         # CLI benchmark runner (Self-RAG vs Naive RAG)
+│   ├── ingest.py                  # Standalone CLI ingestion script
+│   ├── run_eval.py                # CLI benchmark runner (Self-RAG vs Naive RAG)
+│   └── generate_eval_dataset.py   # Script to generate/extend the evaluation dataset
 └── src/
     ├── agent/
     │   ├── graph.py        # LangGraph workflow: nodes, edges, routing logic
@@ -195,13 +196,15 @@ All key parameters live in [`config.py`](config.py):
 |-----------|---------|-------------|
 | `PDF_DIR` | `/home/<user>/llm_paper` | Directory containing your PDF papers |
 | `EMBED_MODEL` | `gemini-embedding-2` | Gemini embedding model |
-| `FLASH_MODEL` | `gemini-flash-lite-latest` | Fast model used for grading/reflection |
-| `PRO_MODEL` | `gemini-flash-latest` | Smarter model used for answer generation |
+| `FLASH_MODEL` | `gemini-3.5-flash-lite` | Fast model used for grading/reflection |
+| `PRO_MODEL` | `gemini-3.1-flash-lite` | Smarter model used for answer generation |
+| `JUDGE_MODEL` | `gemini-3.5-flash-lite` | Model used as LLM-as-a-judge during evaluation |
 | `TOP_K` | `5` | Number of chunks to retrieve per query |
 | `CHUNK_SIZE` | `1000` | Characters per chunk |
 | `CHUNK_OVERLAP` | `200` | Character overlap between chunks |
 | `MAX_GENERATION_RETRIES` | `2` | Max re-generation attempts on hallucination |
 | `MAX_RETRIEVE_CYCLES` | `2` | Max re-retrieval cycles on poor answer |
+| `MIN_USEFUL_WEB_CONTEXT_CHARS` | `100` | Min characters from web search to treat as a valid result |
 
 ---
 
@@ -238,15 +241,15 @@ The system includes an automated evaluation engine to quantitatively compare **S
 
 ### Evaluation Methodology
 
-- **Test Dataset**: 21 curated questions across 3 categories:
-  - `in_domain` (7): Directly answered by PDF library papers.
-  - `adversarial` (7): Topics outside the paper library — tests web-search fallback trigger accuracy.
-  - `complex` (7): Multi-paper synthesis and architectural comparisons.
+- **Test Dataset**: 28 curated questions across 3 categories:
+  - `in_domain` (10): Directly answered by PDF library papers.
+  - `adversarial` (9): Topics outside the paper library — tests web-search fallback trigger accuracy.
+  - `complex` (9): Multi-paper synthesis and architectural comparisons.
 - **LLM-as-a-Judge**: Faithfulness and Answer Relevancy scored by `JUDGE_MODEL` at `temperature=0.0`.
 - **Self-Correction metric**: Independently sourced from the pipeline's own `grade_generation_result` verdict — **not** re-derived from the Faithfulness judge, so the two numbers are genuinely independent.
 - **Batched chunk grading**: All `TOP_K` retrieved chunks are graded in a **single** LLM call, reducing per-query API calls from `TOP_K + 3` to `4` in the typical case.
 
-### Results (N = 21, run 2026-08-22)
+### Results (N = 21, run 2026-08-22 — dataset has since grown to 28 questions; re-run pending)
 
 > ⚠️ **Disclaimer**: Judge uses the same model family as the generator; treat results as a relative comparison, not absolute quality scores.
 
